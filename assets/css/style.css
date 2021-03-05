@@ -18,11 +18,16 @@ body {
 }
 
 #title {
+    width: 80%;
     color: #001d6d;
     font-size: 200%;
     text-align: center;
     font-weight: bolder;
-    line-height: 0.5;
+    /*    line-height: 0.5;*/
+}
+
+#title > p {
+    margin: 1%;
 }
 
 #line1 {
@@ -31,15 +36,10 @@ body {
     width: 100%;
 }
 
-#logo {
-    width: 30%;
-}
-
 #text1 {
     text-indent: 3%;
-    width: 60%;
-    text-align: justify;
     font-size: 110%;
+    text-align: justify;
 }
 
 #img_map,
@@ -56,11 +56,13 @@ body {
 }
 
 #menu {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    /*    flex-wrap: nowrap;*/
     white-space: nowrap;
 }
 
@@ -68,6 +70,10 @@ body {
     margin: 2%;
     font-size: 120%;
     font-weight: bold;
+}
+
+.link_menu > a {
+    width: 100%
 }
 
 #document {
@@ -79,7 +85,6 @@ body {
 }
 
 .doc_img {
-    width: 50%;
     margin: 2%;
     outline: 1px solid #000;
 }
@@ -89,4 +94,46 @@ body {
     font-size: 110%;
     color: blue;
     text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+    #text1 {
+        width: 60%;
+    }
+
+    .doc_img {
+        width: 50%;
+    }
+
+    #logo {
+        width: 30%;
+    }
+
+    #title {
+        font-size: 200%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #text1 {
+        width: 80%;
+    }
+
+    .doc_img {
+        width: 80%;
+    }
+
+    #document {
+        flex-wrap: wrap;
+    }
+
+    #logo {
+        width: 50%;
+        margin: 5%;
+    }
+
+    #title {
+        font-size: 150%;
+    }
+}
 }
