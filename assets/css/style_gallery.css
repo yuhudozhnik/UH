@@ -59,7 +59,11 @@ body {
     /*    flex-wrap: nowrap;*/
     white-space: nowrap;
 }
-
+#line1 {
+    size: 4;
+    color: #001d6d;
+    width: 100%;
+}
 .link_menu {
     margin: 2%;
     font-size: 120%;
