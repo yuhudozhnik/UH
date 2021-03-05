@@ -73,7 +73,7 @@ img {
     flex-wrap: wrap;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 800px) {
 
     .text,
     #text1 {
@@ -85,7 +85,7 @@ img {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
 
     .text,
     #text1 {

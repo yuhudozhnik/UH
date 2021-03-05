@@ -68,7 +68,7 @@ body {
 
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 800px) {
     .link {
         width: 50%;
         text-align: left;
@@ -87,7 +87,7 @@ body {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
     .link {
         width: 100%;
         text-align: center;
