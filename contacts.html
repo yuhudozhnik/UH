@@ -10,15 +10,18 @@
 </head>
 
 <body>
-    <div id="menu">
-        <div class="link_menu"><a href="index.html">Главная</a></div>
-        <div class="link_menu"><a href="gallery.html">Галерея</a></div>
-        <div class="link_menu"><a href="contest.html">Вифлеемская звезда</a></div>
-        <div class="link_menu"><a href="meropriyatiya.html">Наши мероприятия</a></div>
-        <div class="link_menu"><a href="publications.html">Наши издания</a></div>
-        <div class="link_menu"><a href="document.html">Награды</a></div>
-        <div class="link_menu"><a href="contacts.html">Контакты</a></div>
-    </div>
+
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('div_menu').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки:', error));
+
+    </script>
+    <div id="div_menu"></div>
+
     <hr id="line1">
     <div class="title">Контакты</div>
     <div class="text">
@@ -26,22 +29,23 @@
         <a href="tel:8(499)172-16-45">8(499)172-16-45</a><br><br>
         <a href="tel:8(499)742-61-12">8(499)742-61-12</a><br><br>
         <p>Отвечаем на вопросы и также принимаем предварительные заявления в свободной форме по E-mail:
-            <a href="mailto:t7426112@yandex.ru">t7426112@yandex.ru</a></p>
+            <a href="mailto:t7426112@yandex.ru">t7426112@yandex.ru</a>
+        </p>
     </div>
     <div class="title">Прием заявлений в школу-студию</div>
     <div class="text">ВТ, СР, ЧТ с 14:00 до 18:00<br>
         СБ с 10:00 до 16:00</div>
     <div class="title">Расписание занятий</div>
-        <div class="link"><a href="assets/files/zanyatiya.docx">Скачать файл</a></div>
+    <div class="link"><a href="assets/files/zanyatiya.docx">Скачать файл</a></div>
     <div class="title">Расписания мероприятий</div>
-        <div class="link"><a href="assets/files/meropriyatiya.doc">Скачать файл</a></div>
+    <div class="link"><a href="assets/files/meropriyatiya.doc">Скачать файл</a></div>
     <div class="title">Стоимость занятий по изобразительному искусству</div>
-        <div class="link"><a href="assets/files/classes.pdf">Скачать файл</a></div>
+    <div class="link"><a href="assets/files/classes.pdf">Скачать файл</a></div>
     <div class="title">Стоимость занятий по английскому языку</div>
-        <div class="link"><a href="assets/files/classes_eng.pdf">Скачать файл</a></div>
+    <div class="link"><a href="assets/files/classes_eng.pdf">Скачать файл</a></div>
     <div class="title">Проезд</div>
-        <div class="text">Информация о проезде в файле</div><br>
-        <div class="link"><a href="assets/files/transit.pdf">Скачать файл</a></div>
+    <div class="text">Информация о проезде в файле</div><br>
+    <div class="link"><a href="assets/files/transit.pdf">Скачать файл</a></div>
     <div class="title">Карта проезда</div>
 
     <div id="map">
@@ -49,7 +53,7 @@
         <img id="img_map" src="assets/images/map.png" alt="">
     </div>
     <div class="title">Документы</div>
-    <div class="link"><a href="assets/files/doc.pdf">Скачать файл</a></div>
+    <div class="link"><a href="assets/doc.zip">Скачать файл</a></div>
 </body>
 
 </html>

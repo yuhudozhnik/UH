@@ -10,17 +10,18 @@
 </head>
 
 <body>
-    <div id="menu">
-        <div class="link_menu"><a href="index.html">Главная</a></div>
-        <div class="link_menu"><a href="gallery.html">Галерея</a></div>
-        <div class="link_menu"><a href="contest.html">Вифлеемская звезда</a></div>
-        <div class="link_menu"><a href="meropriyatiya.html">Наши мероприятия</a></div>
-        <div class="link_menu"><a href="publications.html">Наши издания</a></div>
-        <div class="link_menu"><a href="document.html">Награды</a></div>
-        <div class="link_menu"><a href="contacts.html">Контакты</a></div>
-    </div>
-    <hr id="line1">
+    <script>
+        fetch('menu.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('div_menu').innerHTML = html;
+                })
+                .catch(error => console.error('Ошибка загрузки:', error));
+    </script>
+    <div id="div_menu"></div>
     
+    <hr id="line1">
+
     <div id="title1">Дни воинской славы России</div>
     <div class="text">
         <p>- 7 ноября. День воинской славы России – День
@@ -55,7 +56,7 @@
             <img class="img" src="assets/images/meropriyatiya/5.jpg" alt="">
         </div>
     </div>
-    
+
     <div id="title1">Фотоотчёт на пленэре</div>
     <div class="img_block">
         <div class="img_text">
@@ -68,7 +69,7 @@
             <img class="img" src="assets/images/meropriyatiya/8.png" alt="">
         </div>
     </div>
-    
+
     <div id="title1">Фотоотчёт в студии</div>
     <div class="img_block">
         <div class="img_text">
@@ -87,7 +88,7 @@
             <img class="img" src="assets/images/meropriyatiya/13.png" alt="">
         </div>
     </div>
-    
+
     <div id="title1">Фотоотчёт выставки</div>
     <div class="img_block">
         <div class="img_text">
@@ -106,22 +107,22 @@
             <img class="img" src="assets/images/meropriyatiya/18.png" alt="">
         </div>
     </div>
-    
+
     <div id="title1">Музейная практика</div>
     <div class="img_text">
-        </div>
+    </div>
     <div class="img_block">
         <div class="img_text" style="width: 50%">
             <img class="img" src="assets/images/meropriyatiya/19.png" alt="">
         </div>
     </div>
     <div class="img_text">
-        </div>
-        
-    <div class="title1">
-        <p>Больше наших мероприятий и фотоотчетов в группе ВКонтакте <a href="https://vk.com/bethlehemstar"> Клуб "Юный Художник"</a></p> 
     </div>
-    
+
+    <div class="title1">
+        <p>Больше наших мероприятий и фотоотчетов в группе ВКонтакте <a href="https://vk.com/bethlehemstar"> Клуб "Юный Художник"</a></p>
+    </div>
+
 </body>
 
 </html>

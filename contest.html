@@ -10,15 +10,17 @@
 </head>
 
 <body>
-    <div id="menu">
-        <div class="link_menu"><a href="index.html">Главная</a></div>
-        <div class="link_menu"><a href="gallery.html">Галерея</a></div>
-        <div class="link_menu"><a href="contest.html">Вифлеемская звезда</a></div>
-        <div class="link_menu"><a href="meropriyatiya.html">Наши мероприятия</a></div>
-        <div class="link_menu"><a href="publications.html">Наши издания</a></div>
-        <div class="link_menu"><a href="document.html">Награды</a></div>
-        <div class="link_menu"><a href="contacts.html">Контакты</a></div>
-    </div>
+   
+    <script>
+        fetch('menu.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('div_menu').innerHTML = html;
+                })
+                .catch(error => console.error('Ошибка загрузки:', error));
+    </script>
+    <div id="div_menu"></div>
+    
     <hr id="line1">
     <div id="logo">
         <img id="logo_img" src="assets/images/logo_contest.png" alt="">

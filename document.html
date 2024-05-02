@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-   <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
     <title>Наши награды</title>
     <link rel="stylesheet" href="assets/css/style_document.css" type="text/css">
@@ -10,15 +10,16 @@
 </head>
 
 <body>
-    <div id="menu">
-        <div class="link_menu"><a href="index.html">Главная</a></div>
-        <div class="link_menu"><a href="gallery.html">Галерея</a></div>
-        <div class="link_menu"><a href="contest.html">Вифлеемская звезда</a></div>
-        <div class="link_menu"><a href="meropriyatiya.html">Наши мероприятия</a></div>
-        <div class="link_menu"><a href="publications.html">Наши издания</a></div>
-        <div class="link_menu"><a href="document.html">Награды</a></div>
-        <div class="link_menu"><a href="contacts.html">Контакты</a></div>
-    </div>
+    <script>
+        fetch('menu.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('div_menu').innerHTML = html;
+                })
+                .catch(error => console.error('Ошибка загрузки:', error));
+    </script>
+    <div id="div_menu"></div>
+
     <hr id="line1">
     <div class="title">Наши награды</div>
 
