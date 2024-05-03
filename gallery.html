@@ -12,16 +12,16 @@
 <body>
     <script>
         fetch('menu.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('div_menu').innerHTML = html;
-                })
-                .catch(error => console.error('Ошибка загрузки:', error));
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('div_menu').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки:', error));
     </script>
     <div id="div_menu"></div>
 
     <hr id="line1">
-    <div class="text">Работы наших учеников</div>
+    <div class="title1">Работы наших учеников</div>
     <div class="img_block">
         <div class="img_text">
             <img class="img" src="assets/images/gallery/1.jpg" alt="">
@@ -176,6 +176,23 @@
         <div class="img_text"> <img class="img" src="assets/images/photo/31.jpg" alt=""></div>
         <div class="img_text"> <img class="img" src="assets/images/photo/32.jpg" alt=""></div>
     </div>
-</body>
-
-</html>
+    <div class="overlay"></div>
+    <script>
+        document.querySelectorAll('.img').forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('zoomed')) {
+                    document.querySelectorAll('.img').forEach(function(otherItem) {
+                        otherItem.classList.remove('zoomed');
+                    });
+                    this.classList.add('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "block";
+                } else {
+                    this.classList.remove('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body></html>

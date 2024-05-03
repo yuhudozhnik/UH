@@ -28,12 +28,48 @@
         <p>Выставка посвящается памяти педагога Детского арт-клуба «Юный художник» Веры Михайловны Пискарёвой.</p>
         <p>- «Являясь выпускниками Веры Михайловны, мы благодарны, что она смогла разглядеть в нас потенциал и развить способности. Стала для нас проводником в профессию, воспитала любовь к творчеству и дала вектор развития» - Елизавета и Валентина Трофимовы</p>
         <br>
-        <p style="font-size: 60%;">Примечание: *Объединение «Мир искусства» создано в порядке общественной инициативы педагогами, выпускниками, родителями воспитанников Детского арт-клуба «Юный художник» в целях художественного воспитания и непрерывной культурно-просветительской работы. Объединяет на добровольных началах художников, представителей других творческих профессий и лиц, связанных творческими интересами в области культуры и искусства.</p>
+        <p style="font-size: 90%; font-style: italic;">Примечание: *Объединение «Мир искусства» создано в порядке общественной инициативы педагогами, выпускниками, родителями воспитанников Детского арт-клуба «Юный художник» в целях художественного воспитания и непрерывной культурно-просветительской работы. Объединяет на добровольных началах художников, представителей других творческих профессий и лиц, связанных творческими интересами в области культуры и искусства.</p>
     </div>
 
     <div id="title1">Фотоотчёт выставки</div>
 
     <div class="img_block">
+       <div class="img_text">
+        <img class="img" src="assets/images/news/24.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/25.jpg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/26.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/27.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/28.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/29.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/30.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/31.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/32.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/33.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/34.jpeg" alt="">
+    </div>
+    <div class="img_text">
+        <img class="img" src="assets/images/news/35.jpeg" alt="">
+    </div>
         <div class="img_text">
             <img class="img" src="assets/images/news/5.jpeg" alt="">
         </div>
@@ -105,6 +141,24 @@
             <img class="img" src="assets/images/news/23.jpg" alt="">
         </div>
     </div>
-
+    <div class="overlay"></div>
+    <script>
+        document.querySelectorAll('.img').forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('zoomed')) {
+                    document.querySelectorAll('.img').forEach(function(otherItem) {
+                        otherItem.classList.remove('zoomed');
+                    });
+                    this.classList.add('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "block";
+                } else {
+                    this.classList.remove('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "none";
+                }
+            });
+        });
+    </script>
 
 </body></html>
