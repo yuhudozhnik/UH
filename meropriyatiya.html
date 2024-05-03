@@ -12,14 +12,15 @@
 <body>
     <script>
         fetch('menu.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('div_menu').innerHTML = html;
-                })
-                .catch(error => console.error('Ошибка загрузки:', error));
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('div_menu').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки:', error));
+
     </script>
     <div id="div_menu"></div>
-    
+
     <hr id="line1">
 
     <div id="title1">Дни воинской славы России</div>
@@ -122,7 +123,26 @@
     <div class="title1">
         <p>Больше наших мероприятий и фотоотчетов в группе ВКонтакте <a href="https://vk.com/bethlehemstar"> Клуб "Юный Художник"</a></p>
     </div>
+    <div class="overlay"></div>
+    <script>
+        document.querySelectorAll('.img').forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('zoomed')) {
+                    document.querySelectorAll('.img').forEach(function(otherItem) {
+                        otherItem.classList.remove('zoomed');
+                    });
+                    this.classList.add('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "block";
+                } else {
+                    this.classList.remove('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "none";
+                }
+            });
+        });
 
+    </script>
 </body>
 
 </html>
