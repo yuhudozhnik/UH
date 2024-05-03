@@ -27,11 +27,13 @@ body {
     /*    flex-wrap: nowrap;*/
     white-space: nowrap;
 }
+
 #line1 {
     size: 4;
     color: #001d6d;
     width: 100%;
 }
+
 .link_menu {
     margin: 2%;
     font-size: 120%;
@@ -80,7 +82,53 @@ body {
 .img {
     margin: 1%;
     width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.img_text:hover .img {
+    transform: scale(1.1);
+    cursor: zoom-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.img_text .img.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 0.5s forwards;
+    transition: none;
+    z-index: 15;
+    cursor: zoom-out;
+    max-height: 90vh;
+    max-width: 99vw;
+    padding: 0;
+    margin: 0;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    display: none;
+    z-index: 10;
 }
 
 @media screen and (min-width: 800px) {
