@@ -12,28 +12,49 @@
 <body>
     <script>
         fetch('menu.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('div_menu').innerHTML = html;
-                })
-                .catch(error => console.error('Ошибка загрузки:', error));
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('div_menu').innerHTML = html;
+            })
+            .catch(error => console.error('Ошибка загрузки:', error));
+
     </script>
     <div id="div_menu"></div>
 
     <hr id="line1">
     <div class="title">Наши награды</div>
 
-    <img src="assets/images/documents/1.webp" alt="">
-    <img src="assets/images/documents/2.webp" alt="">
-    <img src="assets/images/documents/10.webp" alt="">
-    <img src="assets/images/documents/3.webp" alt="">
-    <img src="assets/images/documents/4.webp" alt="">
-    <img src="assets/images/documents/5.webp" alt="">
-    <img src="assets/images/documents/6.webp" alt="">
-    <img src="assets/images/documents/7.webp" alt="">
-    <img src="assets/images/documents/8.webp" alt="">
-    <img src="assets/images/documents/9.webp" alt="">
-    <img src="assets/images/documents/11.webp" alt="">
+    <div class="img_text"><img class="img" src="assets/images/documents/1.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/2.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/10.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/3.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/4.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/5.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/6.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/7.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/8.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/9.webp" alt=""></div>
+    <div class="img_text"><img class="img" src="assets/images/documents/11.webp" alt=""></div>
+    <div class="overlay"></div>
+    <script>
+        document.querySelectorAll('.img').forEach(function(item) {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('zoomed')) {
+                    document.querySelectorAll('.img').forEach(function(otherItem) {
+                        otherItem.classList.remove('zoomed');
+                    });
+                    this.classList.add('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "block";
+                } else {
+                    this.classList.remove('zoomed');
+                    var overlay = document.querySelector('body > .overlay');
+                    overlay.style.display = "none";
+                }
+            });
+        });
+
+    </script>
 </body>
 
 </html>
