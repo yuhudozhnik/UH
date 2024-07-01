@@ -54,7 +54,38 @@ body {
     font-weight: bolder;
 }
 
+details {
+    width: 100%;
+    padding: 1%;
+}
+
+details summary:before {
+    content: "▹";
+    color: #001d6d;
+    margin: 0.3em;
+}
+
+
+details[open] summary:before {
+    content: "▿";
+}
+
+summary {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 120%;
+    text-align: center;
+    font-weight: 900;
+    padding-left: 10%;
+    margin: 1%;
+}
+
 .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     text-align: justify;
     font-size: 110%;
     text-indent: 3%;
@@ -62,9 +93,8 @@ body {
 
 .img_block {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -81,7 +111,6 @@ body {
 
 .img {
     margin: 1%;
-    width: 100%;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -133,24 +162,40 @@ body {
 
 @media screen and (min-width: 800px) {
 
-    .text,
-    #text1 {
-        width: 60%;
+    img {
+        width: 100%;
     }
 
-    img {
-        width: 30%;
+    .img_block {
+        flex-direction: row;
+    }
+
+    summary {
+        text-align: center;
     }
 }
 
 @media screen and (max-width: 800px) {
 
-    .text,
     #text1 {
+        width: 130%;
+    }
+
+    img,
+    .img_text {
         width: 80%;
     }
 
-    img {
-        width: 80%;
+    .img_block {
+        flex-direction: column;
     }
+
+    .img_text {
+        margin: 0 auto;
+    }
+
+    summary {
+        text-align: left;
+    }
+
 }
