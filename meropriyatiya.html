@@ -99,62 +99,83 @@
 
     <details>
         <summary>Фотоотчёт в студии</summary>
-    <div class="img_block">
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/9.webp" alt="">
+        <div class="img_block">
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/9.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/10.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/11.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/12.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/13.webp" alt="">
+            </div>
         </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/10.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/11.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/12.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/13.webp" alt="">
-        </div>
-    </div>
     </details>
 
     <details>
         <summary>Фотоотчёт выставки</summary>
-    <div class="img_block">
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/14.webp" alt="">
+        <div class="img_block">
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/14.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/15.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/16.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/17.webp" alt="">
+            </div>
+            <div class="img_text">
+                <img class="img" src="assets/images/meropriyatiya/18.webp" alt="">
+            </div>
         </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/15.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/16.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/17.webp" alt="">
-        </div>
-        <div class="img_text">
-            <img class="img" src="assets/images/meropriyatiya/18.webp" alt="">
-        </div>
-    </div>
     </details>
-    
+
     <details>
         <summary>Музейная практика</summary>
-    <div class="img_text">
-    </div>
-    <div class="img_block">
-        <div class="img_text" style="width: 50%">
-            <img class="img" src="assets/images/meropriyatiya/19.webp" alt="">
+        <div class="img_text">
         </div>
-    </div>
-    <div class="img_text">
-    </div>
+        <div class="img_block">
+            <div class="img_text" style="width: 50%">
+                <img class="img" src="assets/images/meropriyatiya/19.webp" alt="">
+            </div>
+        </div>
+        <div class="img_text">
+        </div>
     </details>
-    
+
     <div class="title1" style="margin-top: 3%;">
         <p>Больше наших мероприятий и фотоотчетов в группе ВКонтакте <a href="https://vk.com/bethlehemstar"> Клуб "Юный Художник"</a></p>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Начало работы скрипта по замене символов.");
+            var walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            var node;
+            while (node = walker.nextNode()) {
+                if (node.nodeValue.trim().length > 0) {
+                    node.nodeValue = node.nodeValue.replace(/ё/g, 'е').replace(/ё/g, 'е').replace(/ё/g, 'е');
+                }
+            }
+
+        });
+    </script>
+
     <div class="overlay"></div>
     <script>
         document.querySelectorAll('.img').forEach(function(item) {

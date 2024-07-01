@@ -269,6 +269,26 @@
         <p>Больше новостей и фотоотчетов в группе ВКонтакте <a href="https://vk.com/bethlehemstar"> Клуб "Юный Художник"</a></p>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Начало работы скрипта по замене символов.");
+            var walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            var node;
+            while (node = walker.nextNode()) {
+                if (node.nodeValue.trim().length > 0) {
+                    node.nodeValue = node.nodeValue.replace(/ё/g, 'е').replace(/ё/g, 'е').replace(/ё/g, 'е');
+                }
+            }
+
+        });
+    </script>
+
     <div class="overlay"></div>
     <script>
         document.querySelectorAll('.img').forEach(function(item) {
